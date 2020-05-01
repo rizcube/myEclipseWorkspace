@@ -7,3 +7,5 @@ Added the following dependencies
 update the list later
 
 https://mvnrepository.com/artifact/io.cucumber/cucumber-junit/2.0.0
+Natural BDD files
+Eclispe Java developmetn Tools
