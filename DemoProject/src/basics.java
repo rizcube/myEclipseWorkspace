@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.*;
 
 import org.testng.Assert;
 
+import files.ReUseableMethods;
 import files.payload;
 public class basics {
 
@@ -46,7 +47,7 @@ public class basics {
 		.when().get("maps/api/place/get/json")
 		.then().assertThat().log().all().statusCode(200).extract().response().asString();
 	
-		 JsonPath js1 = new JsonPath(getPlaceResponse);
+		 JsonPath js1 = ReUseableMethods.rawToJson(getPlaceResponse);
 		 String actualAddress = js1.getString("address");
 		 System.out.println(actualAddress);
 		 Assert.assertEquals(actualAddress, newAddress);
