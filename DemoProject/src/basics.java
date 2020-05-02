@@ -1,4 +1,6 @@
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -20,7 +22,9 @@ public class basics {
 		// Add place > update Place with address 
 		// Get Place to validate if New address is present in response
 		System.out.println(response);
-		
-		
+		// parse the json in order to extract place
+		JsonPath js = new JsonPath(response);
+		String placeId = js.get("place_id");
+		System.out.println(placeId);
 	}
 }
