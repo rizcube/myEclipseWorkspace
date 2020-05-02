@@ -12,14 +12,14 @@ public class basics {
 		// when  - Submit the API
 		// Then  - validate the response		
 		RestAssured.baseURI = "https://rahulshettyacademy.com/";
-		given().log().all().queryParam("key", "qaclick").header("Content-Type","application/json")
+		String response = given().queryParam("key", "qaclick").header("Content-Type","application/json")
 		.body(payload.AddPlace()).when().post("maps/api/place/add/json")
 		.then().log().all().assertThat().statusCode(200).body("scope",equalTo("APP"))
-		.header("Server", "Apache/2.4.18 (Ubuntu)");
+		.header("Server", "Apache/2.4.18 (Ubuntu)").extract().asString();  // extract the response here and save in a variable
 		
 		// Add place > update Place with address 
 		// Get Place to validate if New address is present in response
-		
+		System.out.println(response);
 		
 		
 	}
