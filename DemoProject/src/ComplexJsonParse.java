@@ -25,18 +25,29 @@ public class ComplexJsonParse {
 		String titleFirstCourse = js.getString("courses[2].title");
 		System.out.println(titleFirstCourse);
 		System.out.println("-------------------------");
-		int sum = 0;
-		for (int i=0; i< count; i++)
+		// Print All course titles and their respective Prices
+		for (int i = 0; i<count; i++) 
 		{
-			//System.out.println(js.get("courses["+i+"].title"));
-			String courseTitles = js.getString("courses["+i+"].title");
-			System.out.println(js.get("courses["+i+"].price"));
-			int price = js.get("courses[" + i + "].price");
-			sum = price + sum;
+			String courseTitles = js.get("courses["+i+"].title");
+			System.out.println(js.get("courses["+i+"].price").toString());
 			System.out.println(courseTitles);
-			System.out.println(sum);
+		}	
+		System.out.println("Print number of copies sold by RPA course");
+		System.out.println("**--------*********-----********-------****");
+		
+		for (int i =0; i<count; i++) 
+		{
+			String courseTitles = js.getString("courses["+i+"].title");
+			System.out.println(courseTitles);
+			if (courseTitles.equalsIgnoreCase("RPA")) 
+			{
+				int copies = js.get("courses["+i+"].copies");
+				System.out.println("copies are "+copies);
+				break;
+			}
 		}
 		
+		// verify if sum of all course prices matches with purchase amount
 		
 		
 	}
