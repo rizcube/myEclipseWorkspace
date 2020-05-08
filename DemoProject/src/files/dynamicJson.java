@@ -12,7 +12,7 @@ public class dynamicJson {
 	public void addbook() 
 	{
 		RestAssured.baseURI = "http://216.10.245.166";
-		String response =given().body(payload.AddBook()).
+		String response =given().body(payload.AddBook("asdf","adf")).
 		when().post("/Library/Addbook.php")
 		.then().assertThat().statusCode(200)
 		.extract().response().asString();
