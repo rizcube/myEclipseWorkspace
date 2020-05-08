@@ -1,7 +1,7 @@
 // https://testng.org/doc/download.html
 // https://repo1.maven.org/maven2/com/beust/jcommander/1.78/
 //https://github.com/google/guice/wiki/Guice422
-
+// verify if sum of all course prices matches with purchase amount
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
