@@ -5,6 +5,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="/Users/rizcube/Desktop/Programs_Downloaded_And_Installed/JARS/json-path-4.3.0-dist/docs/json-path-4.3.0-javadoc.jar"/>
 	<classpathentry kind="lib" path="/Users/rizcube/Desktop/Programs_Downloaded_And_Installed/JARS/json-path-4.3.0-dist/docs/json-path-4.3.0-sources.jar"/>
@@ -143,5 +148,7 @@
 	<classpathentry kind="lib" path="/Users/rizcube/Desktop/Programs_Downloaded_And_Installed/JARS/xml-path-4.3.0-dist/xml-path-4.3.0.jar"/>
 	<classpathentry kind="lib" path="/Users/rizcube/Desktop/Programs_Downloaded_And_Installed/JARS/slf4j-simple-1.7.30 (1).jar"/>
 	<classpathentry kind="lib" path="/Users/rizcube/Desktop/Programs_Downloaded_And_Installed/JARS/testng-7.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/rizcube/Desktop/Programs_Downloaded_And_Installed/JARS/jcommander-1.78.jar"/>
+	<classpathentry kind="lib" path="/Users/rizcube/Desktop/Programs_Downloaded_And_Installed/JARS/guice-4.2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
