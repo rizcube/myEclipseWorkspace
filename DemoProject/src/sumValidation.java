@@ -2,6 +2,7 @@
 // https://repo1.maven.org/maven2/com/beust/jcommander/1.78/
 //https://github.com/google/guice/wiki/Guice422
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import files.payload;
@@ -12,6 +13,7 @@ public class sumValidation {
 	@Test
 	public void sumOfcourses()
 	{
+		int sum = 0;
 		JsonPath js = new JsonPath(payload.CoursePrice());
 		int count = js.getInt("courses.size()");
 		
@@ -21,7 +23,12 @@ public class sumValidation {
 			int copies = js.getInt("courses["+i+"].copies");
 			int amount = price * copies;
 			System.out.println(amount);
+			sum = sum + amount;
+			
 		}
+		int purchaseAmount = js.getInt("dashboard.purchaseAmount");
+		System.out.println(purchaseAmount);
+		Assert.assertEquals(sum, purchaseAmount);
 	}
 	
 }
