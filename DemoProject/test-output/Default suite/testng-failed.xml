@@ -5,7 +5,7 @@
     <classes>
       <class name="files.dynamicJson">
         <methods>
-          <include name="addbook"/>
+          <include name="addbook" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- files.dynamicJson -->
     </classes>

@@ -10,6 +10,8 @@ import static io.restassured.RestAssured.*;
 public class dynamicJson {
 	
 	@Test(dataProvider = "BooksData")
+	
+	
 	public void addbook(String isbn, String aisle) 
 	{
 		RestAssured.baseURI = "http://216.10.245.166";
@@ -31,11 +33,13 @@ public Object[][] getData()
 {
 	// array is the collection of elements Example! new object [] {2,3,4,5}
 	// multidimensional is collection of arrays.
-	return new Object[][] {{"Book1","0001"}, {"Book2","0002"}, {"Book3","0003"}, {"Book4","0004"}};
+	return new Object[][] {{"Book5","0005"}, {"Book6","0006"}, {"Book7","0007"}, {"Book8","0008"}};
 }
 
-
-
+@DataProvider(name="DeleteBooksData")
+public Object[][] deleteData(){
+	return new Object[][] {{"Book1","0001"}, {"Book2","0002"}, {"Book3","0003"}, {"Book4","0004"}};
+}
 
 
 
