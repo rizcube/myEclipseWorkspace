@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-05-10T17:41:41 BST" name="Default suite" finished-at="2020-05-10T17:41:44 BST" duration-ms="3361">
+  <suite started-at="2020-05-11T13:39:11 BST" name="Default suite" finished-at="2020-05-11T13:39:14 BST" duration-ms="2906">
     <groups>
     </groups>
-    <test started-at="2020-05-10T17:41:41 BST" name="Default test" finished-at="2020-05-10T17:41:44 BST" duration-ms="3361">
-      <class name="files.staticJson">
-        <test-method signature="addbook()[pri:0, instance:files.staticJson@460d0a57]" started-at="2020-05-10T17:41:41 BST" name="addbook" finished-at="2020-05-10T17:41:44 BST" duration-ms="3307" status="PASS">
+    <test started-at="2020-05-11T13:39:11 BST" name="Default test" finished-at="2020-05-11T13:39:14 BST" duration-ms="2906">
+      <class name="files.staticJson_practice">
+        <test-method signature="addbook()[pri:0, instance:files.staticJson_practice@3c22fc4c]" started-at="2020-05-11T13:39:11 BST" name="addbook" finished-at="2020-05-11T13:39:14 BST" duration-ms="2851" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addbook -->
-      </class> <!-- files.staticJson -->
+      </class> <!-- files.staticJson_practice -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

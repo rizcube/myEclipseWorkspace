@@ -2,11 +2,9 @@
 
 package files;
 import static io.restassured.RestAssured.given;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -31,7 +29,5 @@ public class staticJson {
 	
 	public static String GenerateStringFromResource(String path) throws IOException {
 		return new String(Files.readAllBytes(Paths.get(path)));
-	}
-	
-	
+	}	
 }
