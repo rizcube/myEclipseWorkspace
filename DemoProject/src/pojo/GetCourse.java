@@ -3,6 +3,8 @@ The following jars needs to be included to be able to create pojo classes
 Gson » 2.8.6
 https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.11.0
 1. Jackson Databind,  com.fasterxml.jackson.core » jackson-annotations, com.fasterxml.jackson.core » jackson-core
+
+Created POJO classes based on the response json file
 */
 
 package pojo;
@@ -12,7 +14,7 @@ public class GetCourse {
 	private String url;
 	private String services;
 	private String instructor;
-	private String courses;
+	private Courses courses;
 	private String expertise;
 	private String linkedin;
 	public String getUrl() {
@@ -33,10 +35,10 @@ public class GetCourse {
 	public void setInstructor(String instructor) {
 		this.instructor = instructor;
 	}
-	public String getCourses() {
+	public Courses getCourses() {
 		return courses;
 	}
-	public void setCourses(String courses) {
+	public void setCourses(Courses courses) {
 		this.courses = courses;
 	}
 	public String getExpertise() {
