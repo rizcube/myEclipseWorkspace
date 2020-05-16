@@ -2,20 +2,23 @@ package pojo;
 
 public class api {
 	
-	private String coruseTitle;
-	private String prices;
-	public String getCoruseTitle() {
-		return coruseTitle;
+	private String courseTitle;
+	private String price;
+	
+	public String getCourseTitle() {
+		return courseTitle;
 	}
-	public void setCoruseTitle(String coruseTitle) {
-		this.coruseTitle = coruseTitle;
+	public void setCourseTitle(String courseTitle) {
+		this.courseTitle = courseTitle;
 	}
-	public String getPrices() {
-		return prices;
+	public String getPrice() {
+		return price;
 	}
-	public void setPrices(String prices) {
-		this.prices = prices;
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	
-
+	
+	
+	
 }

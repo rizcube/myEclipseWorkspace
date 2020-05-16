@@ -1,7 +1,11 @@
 // https://www.selenium.dev/downloads/
 package demo_Oauth;
 import static io.restassured.RestAssured.given;
+
+import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
+import pojo.GetCourse;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 /* 
@@ -10,7 +14,7 @@ https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/au
 &response_type=code&redirect_uri=https://rahulshettyacademy.com/getCourse.php&state=abcd
 */
 
-//  https://rahulshettyacademy.com/getCourse.php?state=abcd&code=4%2FzgEEcBinz9o-OJKnjU89AJ6twIdOQOySlka-OVj03eLukqJ-LzRL0OPfZBwvW3rXO8vsI9kdCIwOWJnPO6KUMMk&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none#
+//  https://rahulshettyacademy.com/getCourse.php?state=abcd&code=4%2FzwEFteggChiT3xaFscM2xHy365qlfuSk51BkZRA0sWpWBJNBNG-nHnovXwpXzWds9XhLNqaLl8tYgOFraOuQmDg&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none#
 
 public class oAuthTest {
 	
@@ -30,7 +34,7 @@ public class oAuthTest {
 		String url = driver.getCurrentUrl();
 		*/
 		
-		String url ="https://rahulshettyacademy.com/getCourse.php?state=abcd&code=4%2FzgFnniTzunf09T1dcxs9Q735f60LAS6y_o6V0ig8vETObKRTNiFzlWCvTiEenj9JY5KehEmv7dFwkSsaZ1jvbf8&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none#";
+		String url ="https://rahulshettyacademy.com/getCourse.php?state=abcd&code=4%2FzwFbgBC9Mdhe0yNNeU-4rzHTI_gPsW2amqP0LXEYNADKXtBuUF93EDmgw4IqQZlKEACptHSIuPh5ZjEeTKOI4fo&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none#";
 		
 		String partialcode = url.split("code=")[1];
 		String code = partialcode.split("&scope")[0];
@@ -50,11 +54,13 @@ public class oAuthTest {
 	
 		System.out.println(accessTokenResponse);	
 		String accessToken = js.getString("access_token");
-		String response = given().queryParam("access_token", accessToken)
-			
+		GetCourse gc = given().queryParam("access_token", accessToken).expect().defaultParser(Parser.JSON)
 		.when()
-		.get("https://rahulshettyacademy.com/getCourse.php").asString();
-		System.out.println(response);
+		.get("https://rahulshettyacademy.com/getCourse.php").as(GetCourse.class);
+		
+		System.out.println(gc.getLinkedIn());
+		System.out.println(gc.getExpertise());
+		
 		
 	}
 }
