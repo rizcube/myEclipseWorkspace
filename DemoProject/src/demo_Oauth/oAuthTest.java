@@ -2,9 +2,13 @@
 package demo_Oauth;
 import static io.restassured.RestAssured.given;
 
+import java.util.List;
+
 import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
 import pojo.GetCourse;
+import pojo.api;
+import pojo.webAutomation;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
@@ -34,7 +38,7 @@ public class oAuthTest {
 		String url = driver.getCurrentUrl();
 		*/
 		
-		String url ="https://rahulshettyacademy.com/getCourse.php?state=abcd&code=4%2FzwFbgBC9Mdhe0yNNeU-4rzHTI_gPsW2amqP0LXEYNADKXtBuUF93EDmgw4IqQZlKEACptHSIuPh5ZjEeTKOI4fo&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none#";
+		String url ="https://rahulshettyacademy.com/getCourse.php?state=abcd&code=4%2FzwGXoMqrpzmg8O416PnEY26yfd6di-ucn1kc5Y9wEs9iMJXhStSwx4YfA83-U7SvXnYS1L2p6wEz5oFaSWuTO_U&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none#";
 		
 		String partialcode = url.split("code=")[1];
 		String code = partialcode.split("&scope")[0];
@@ -61,6 +65,40 @@ public class oAuthTest {
 		System.out.println(gc.getLinkedIn());
 		System.out.println(gc.getExpertise());
 		
+		//query1: find SOAPUI webservices testing and price
+		gc.getCourses().getApi().get(1).getCourseTitle();
 		
+		System.out.println("Dynamically getting course price");
+		List<api> apiCourses = gc.getCourses().getApi();
+		System.out.println(apiCourses.size());
+		for (int i =0; i< apiCourses.size(); i++) {
+			if (apiCourses.get(i).getCourseTitle().equalsIgnoreCase("SoapUI Webservices testing"));
+			{
+				//System.out.println(apiCourses.get(i).getCourseTitle());
+				System.out.println(apiCourses.get(i).getPrice());
+			}
+		}
+		// Query 2: get all the course titles of api course
+					System.out.println("Get all course titles");
+					System.out.println(apiCourses.size());
+					
+				for (int j=0; j< apiCourses.size(); j++) {
+					
+					System.out.println(apiCourses.get(j).getCourseTitle());	
+		
+		}
+	
+		System.out.println(gc.getCourses().getWebAutomation().get(1).getCourseTitle());
+		
+		System.out.println("Query 3 Get all courses under webAutomationCourses");
+		
+		List<webAutomation> webAutomationCourses = gc.getCourses().getWebAutomation();
+		
+		System.out.println(webAutomationCourses.size());
+		
+		for (int i = 0; i< webAutomationCourses.size(); i++) {
+			System.out.println(webAutomationCourses.get(i).getCourseTitle());
+		}
+				
 	}
 }
