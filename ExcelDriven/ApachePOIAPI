@@ -1,0 +1,17 @@
+Apache POI API
+Data Driven Testing from excel
+
+MAven dependencies setup
+poi-ooxml and poi
+
+
+
+Strategy to Access excel data
+
+create object for XSSFWorkbookclass // this is a class in which all the controls/methods are provided / get hold of excel first
+Get access to sheet
+Get access to all rows of sheet
+Access to specific rows from all rows
+get access to all cells of row
+Access the data from excel into arrays
+
